@@ -58,6 +58,10 @@ pub enum Cmd {
 pub struct Add {
     #[clap(num_args = 1.., required = true, value_hint = ValueHint::DirPath)]
     pub paths: Vec<PathBuf>,
+
+    /// Don't incerment the entry rank if it exists
+    #[clap(long = "no-increment", short)]
+    pub no_increment: bool,
 }
 
 /// Edit the database

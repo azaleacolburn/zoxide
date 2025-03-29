@@ -94,7 +94,8 @@ impl Database {
                 dir.last_accessed = now;
             }
             None => {
-                dirs.push(Dir { path: path.into().into(), rank: by.max(0.0), last_accessed: now })
+                // We don't ever want the initial rank to be 0 (do we?)
+                dirs.push(Dir { path: path.into().into(), rank: by.max(1.0), last_accessed: now })
             }
         });
         self.with_dirty_mut(|dirty| *dirty = true);

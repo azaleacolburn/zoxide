@@ -3,7 +3,7 @@ use std::path::Path;
 use anyhow::{Result, bail};
 
 use crate::cmd::{Add, Run};
-use crate::db::Database;
+use crate::db::{Database, Rank};
 use crate::{config, util};
 
 impl Run for Add {
@@ -33,7 +33,11 @@ impl Run for Add {
             if !Path::new(path).is_dir() {
                 bail!("not a directory: {path}");
             }
-            db.add_update(path, 1.0, now);
+            let rank: Rank = match self.no_increment {
+                true => 0.0,
+                false => 1.0,
+            };
+            db.add_update(path, rank, now);
         }
 
         if db.dirty() {

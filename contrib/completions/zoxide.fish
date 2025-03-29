@@ -32,6 +32,7 @@ complete -c zoxide -n "__fish_zoxide_needs_command" -f -a "import" -d 'Import en
 complete -c zoxide -n "__fish_zoxide_needs_command" -f -a "init" -d 'Generate shell configuration'
 complete -c zoxide -n "__fish_zoxide_needs_command" -f -a "query" -d 'Search for a directory in the database'
 complete -c zoxide -n "__fish_zoxide_needs_command" -f -a "remove" -d 'Remove a directory from the database'
+complete -c zoxide -n "__fish_zoxide_using_subcommand add" -s n -l no-increment -d 'Don\'t incerment the entry rank if it exists'
 complete -c zoxide -n "__fish_zoxide_using_subcommand add" -s h -l help -d 'Print help'
 complete -c zoxide -n "__fish_zoxide_using_subcommand add" -s V -l version -d 'Print version'
 complete -c zoxide -n "__fish_zoxide_using_subcommand edit; and not __fish_seen_subcommand_from decrement delete increment reload" -s h -l help -d 'Print help'

@@ -7,6 +7,10 @@ const completion: Fig.Spec = {
       description: "Add a new directory or increment its rank",
       options: [
         {
+          name: ["-n", "--no-increment"],
+          description: "Don't incerment the entry rank if it exists",
+        },
+        {
           name: ["-h", "--help"],
           description: "Print help",
         },

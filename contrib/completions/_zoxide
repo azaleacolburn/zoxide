@@ -30,6 +30,8 @@ _zoxide() {
         case $line[1] in
             (add)
 _arguments "${_arguments_options[@]}" : \
+'-n[Don'\''t incerment the entry rank if it exists]' \
+'--no-increment[Don'\''t incerment the entry rank if it exists]' \
 '-h[Print help]' \
 '--help[Print help]' \
 '-V[Print version]' \
